@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+    <!-- 按键菜单 -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <com.softwinner.view.MyButton
+            android:id="@+id/device_button"
+            style="@style/navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableLeft="@drawable/menu_equipment"
+            android:focusable="false"
+            android:text="@string/equipment" />
+
+        <!-- “设备”与其他四个过滤类型分开，以示区别 -->
+        <!--
+			<View 
+			    android:layout_width="2dp"
+			    android:layout_height="fill_parent"
+			    android:background="@drawable/navigation_divider"
+			    android:focusableInTouchMode="false"/>
+        -->
+
+        <com.softwinner.view.MyButton
+            android:id="@+id/video_button"
+            style="@style/navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableLeft="@drawable/menu_video"
+            android:focusable="false"
+            android:text="@string/video" />
+
+        <com.softwinner.view.MyButton
+            android:id="@+id/picture_button"
+            style="@style/navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableLeft="@drawable/menu_picture"
+            android:focusable="false"
+            android:text="@string/picture" />
+
+        <com.softwinner.view.MyButton
+            android:id="@+id/music_button"
+            style="@style/navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableLeft="@drawable/menu_music"
+            android:focusable="false"
+            android:text="@string/music" />
+
+        <com.softwinner.view.MyButton
+            android:id="@+id/file_button"
+            style="@style/navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableLeft="@drawable/menu_file"
+            android:focusable="false"
+            android:text="@string/file" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="3dp"
+        android:background="#FF33B5E5" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#FF262626" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <!-- 预览信息 -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="65dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginRight="65dp"
+            android:layout_marginTop="60dp"
+            android:layout_weight="2"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/thumb"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="2"
+                android:background="@color/black"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/thumbnail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/thumbnail_bg" />
+
+                <SurfaceView
+                    android:id="@+id/thumb_movie"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="2" >
+
+                <TextView
+                    android:id="@+id/preview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/preview"
+                    android:paddingTop="20dp"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/interval" />
+        <!-- 列表信息 -->
+
+        <ListView
+            android:id="@+id/android:list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:cacheColorHint="#00000000"
+            android:divider="@drawable/divider"
+            android:dividerHeight="1dp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/path"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:singleLine="true"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:singleLine="true"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</LinearLayout>
